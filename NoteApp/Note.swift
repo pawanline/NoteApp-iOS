@@ -12,4 +12,13 @@ import RealmSwift
 class Note: Object {
     @objc dynamic var title: String = ""
     @objc dynamic var content: String = ""
+
+    let notebook = LinkingObjects(fromType: Notebook.self, property: "notes")
+}
+
+class Notebook: Object {
+    @objc dynamic var title: String = ""
+    @objc dynamic var creationDate = Data()
+
+    let notes = List<Note>()
 }
