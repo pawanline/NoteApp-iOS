@@ -18,6 +18,7 @@
 		D4F3A64921BA277400BD187A /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D4F3A64621BA277400BD187A /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D4F3A64A21BA277400BD187A /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F3A64721BA277400BD187A /* Realm.framework */; };
 		D4F3A64B21BA277400BD187A /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D4F3A64721BA277400BD187A /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D4F3A64F21BBB34600BD187A /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F3A64E21BBB34600BD187A /* Note.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		D4F3A63A21BA26E500BD187A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4F3A64621BA277400BD187A /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		D4F3A64721BA277400BD187A /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		D4F3A64E21BBB34600BD187A /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 				D4F3A61F21BA26E500BD187A /* Assets.xcassets */,
 				D4F3A62121BA26E500BD187A /* LaunchScreen.storyboard */,
 				D4F3A62421BA26E500BD187A /* Info.plist */,
+				D4F3A64E21BBB34600BD187A /* Note.swift */,
 			);
 			path = NoteApp;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 			files = (
 				D4F3A61B21BA26E400BD187A /* ViewController.swift in Sources */,
 				D4F3A61921BA26E300BD187A /* AppDelegate.swift in Sources */,
+				D4F3A64F21BBB34600BD187A /* Note.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

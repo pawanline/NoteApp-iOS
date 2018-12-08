@@ -6,16 +6,62 @@
 //  Copyright © 2018 Pawan Kumar. All rights reserved.
 //
 
+import RealmSwift
 import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        let realm = try! Realm()
+//        let myFirstNote = Note()
+//        myFirstNote.title = "My second note 2 "
+//        myFirstNote.content = "this is free for deletion don't worry"
+//
+//        do {
+//            try realm.write {
+//                realm.add(myFirstNote)
+//            }
+//        } catch {
+//            debugPrint(error.localizedDescription )
+//        }
+//
+        let allNotes = realm.objects(Note.self)
+
+        print("all Notes before deleting \(allNotes) \n \n \n ")
+
+//        if let firstNote = allNotes.first {
+//            try! realm.write {
+//                firstNote.title = "this is my first though I am changing it"
+//            }
+//        }
+//
+//
+//
+//
+//
+//        for note in allNotes {
+//            print("Note title: \(note.title)" + "\n" + "Note content: \(note.content)"  + "\n" + " ============")
+        //      }
+
+        let lastDuplicateNotes = allNotes.filter("title CONTAINS '2'")
+        try! realm.write {
+            realm.delete(lastDuplicateNotes)
+        }
+
+        /* a basic filter example */
+//        let filterNote = allNotes.filter("title CONTAINS 'this' ")
+//        print("filter note is \(filterNote)")
+
+        /* a complex filter examplet */
+
+//        let moreComplexFilter =  NSPredicate(format: "title CONTAINS %@ AND content CONTAINS %@", "this","cool")
+//        let result = allNotes.filter(moreComplexFilter)
+//        print(" more complex all \(result)")
+
+        // print all notes
+        print(allNotes)
         return true
     }
 
@@ -40,7 +86,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
 }
-
