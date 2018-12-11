@@ -14,73 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let realm = try! Realm()
-        
-        // createNoteBook("Notebook 2")
-        
-        if let notebook = realm.objects(Notebook.self).last {
-            print("Notebook: \n \(notebook)")
-            
-            if let firstNote = notebook.notes.first {
-                print(firstNote)
-                
-                print(firstNote.notebook.first?.title as Any)
-            }
-        }
-        
-        // Many to Relationship
-        
-//        let myFirstNote = Note()
-//        myFirstNote.title = "My second note 2 "
-//        myFirstNote.content = "this is free for deletion don't worry"
-//
-//        do {
-//            try realm.write {
-//                realm.add(myFirstNote)
-//            }
-//        } catch {
-//            debugPrint(error.localizedDescription )
-//        }
-//
-//        let allNotes = realm.objects(Note.self)
-//
-//        print("all Notes before deleting \(allNotes) \n \n \n ")
-        
-//        if let firstNote = allNotes.first {
-//            try! realm.write {
-//                firstNote.title = "this is my first though I am changing it"
-//            }
-//        }
-//
-//
-//
-//
-//
-//        for note in allNotes {
-//            print("Note title: \(note.title)" + "\n" + "Note content: \(note.content)"  + "\n" + " ============")
-        //      }
-        
-        /* filter to delete duplicate notes  */
-        
-//        let lastDuplicateNotes = allNotes.filter("title CONTAINS '2'")
-//        try! realm.write {
-//            realm.delete(lastDuplicateNotes)
-//        }
-        
-        /* a basic filter example */
-//        let filterNote = allNotes.filter("title CONTAINS 'this' ")
-//        print("filter note is \(filterNote)")
-        
-        /* a complex filter example */
-        
-//        let moreComplexFilter =  NSPredicate(format: "title CONTAINS %@ AND content CONTAINS %@", "this","cool")
-//        let result = allNotes.filter(moreComplexFilter)
-//        print(" more complex all \(result)")
-        
-        // print all notes
-        
-//        print(allNotes)
-        
+        variousRealmFeatures()
         return true
     }
     
@@ -108,12 +42,83 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 extension AppDelegate {
+    func variousRealmFeatures() {
+        // let realm = try! Realm()
+        
+        /* note book creation setup */
+        
+        // createNoteBook("Notebook 2")
+        
+        //        if let notebook = realm.objects(Notebook.self).last {
+        //            print("Notebook: \n \(notebook)")
+        //
+        //            if let firstNote = notebook.notes.first {
+        //                print(firstNote)
+        //
+        //                print(firstNote.notebook.first?.title as Any)
+        //            }
+        //        }
+        
+        // Many to Relationship
+        
+        //        let myFirstNote = Note()
+        //        myFirstNote.title = "My second note 2 "
+        //        myFirstNote.content = "this is free for deletion don't worry"
+        //
+        //        do {
+        //            try realm.write {
+        //                realm.add(myFirstNote)
+        //            }
+        //        } catch {
+        //            debugPrint(error.localizedDescription )
+        //        }
+        //
+        //        let allNotes = realm.objects(Note.self)
+        //
+        //        print("all Notes before deleting \(allNotes) \n \n \n ")
+        
+        //        if let firstNote = allNotes.first {
+        //            try! realm.write {
+        //                firstNote.title = "this is my first though I am changing it"
+        //            }
+        //        }
+        //
+        //
+        //
+        //
+        //
+        //        for note in allNotes {
+        //            print("Note title: \(note.title)" + "\n" + "Note content: \(note.content)"  + "\n" + " ============")
+        //      }
+        
+        /* filter to delete duplicate notes  */
+        
+        //        let lastDuplicateNotes = allNotes.filter("title CONTAINS '2'")
+        //        try! realm.write {
+        //            realm.delete(lastDuplicateNotes)
+        //        }
+        
+        /* a basic filter example */
+        //        let filterNote = allNotes.filter("title CONTAINS 'this' ")
+        //        print("filter note is \(filterNote)")
+        
+        /* a complex filter example */
+        
+        //        let moreComplexFilter =  NSPredicate(format: "title CONTAINS %@ AND content CONTAINS %@", "this","cool")
+        //        let result = allNotes.filter(moreComplexFilter)
+        //        print(" more complex all \(result)")
+        
+        // print all notes
+        
+        //        print(allNotes)
+    }
+    
     func createNoteBook(_ title: String) {
         let realm = try! Realm()
         
         let notebook = Notebook()
         notebook.title = title
-        notebook.creationDate = Data()
+        notebook.creationDate = Date()
         
         try! realm.write {
             realm.add(notebook)

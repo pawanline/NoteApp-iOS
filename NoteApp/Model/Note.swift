@@ -18,7 +18,7 @@ class Note: Object {
 
 class Notebook: Object {
     @objc dynamic var title: String = ""
-    @objc dynamic var creationDate = Data()
+    @objc dynamic var creationDate = Date()
 
     let notes = List<Note>()
 }

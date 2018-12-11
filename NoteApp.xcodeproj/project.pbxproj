@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D4F3A61921BA26E300BD187A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F3A61821BA26E300BD187A /* AppDelegate.swift */; };
-		D4F3A61B21BA26E400BD187A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F3A61A21BA26E400BD187A /* ViewController.swift */; };
+		D4F3A61B21BA26E400BD187A /* NotebookListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F3A61A21BA26E400BD187A /* NotebookListTableViewController.swift */; };
 		D4F3A61E21BA26E400BD187A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4F3A61C21BA26E400BD187A /* Main.storyboard */; };
 		D4F3A62021BA26E500BD187A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4F3A61F21BA26E500BD187A /* Assets.xcassets */; };
 		D4F3A62321BA26E500BD187A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4F3A62121BA26E500BD187A /* LaunchScreen.storyboard */; };
@@ -19,6 +19,10 @@
 		D4F3A64A21BA277400BD187A /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F3A64721BA277400BD187A /* Realm.framework */; };
 		D4F3A64B21BA277400BD187A /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D4F3A64721BA277400BD187A /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D4F3A64F21BBB34600BD187A /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F3A64E21BBB34600BD187A /* Note.swift */; };
+		D4F3A65821BC004F00BD187A /* NoteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F3A65721BC004F00BD187A /* NoteManager.swift */; };
+		D4F3A65A21BF77F700BD187A /* NoteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F3A65921BF77F700BD187A /* NoteListViewController.swift */; };
+		D4F3A65C21BF785700BD187A /* PushToController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F3A65B21BF785700BD187A /* PushToController.swift */; };
+		D4F3A65F21BF78FE00BD187A /* UIStoryboard+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F3A65E21BF78FE00BD187A /* UIStoryboard+Additions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,20 +60,24 @@
 /* Begin PBXFileReference section */
 		D4F3A61521BA26E300BD187A /* NoteApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F3A61821BA26E300BD187A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D4F3A61A21BA26E400BD187A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D4F3A61A21BA26E400BD187A /* NotebookListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotebookListTableViewController.swift; sourceTree = "<group>"; };
 		D4F3A61D21BA26E400BD187A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D4F3A61F21BA26E500BD187A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D4F3A62221BA26E500BD187A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		D4F3A62421BA26E500BD187A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4F3A62421BA26E500BD187A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = NoteApp/Application/Info.plist; sourceTree = SOURCE_ROOT; };
 		D4F3A62921BA26E500BD187A /* NoteAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoteAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F3A62D21BA26E500BD187A /* NoteAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteAppTests.swift; sourceTree = "<group>"; };
 		D4F3A62F21BA26E500BD187A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4F3A63421BA26E500BD187A /* NoteAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoteAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F3A63821BA26E500BD187A /* NoteAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteAppUITests.swift; sourceTree = "<group>"; };
-		D4F3A63A21BA26E500BD187A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4F3A63A21BA26E500BD187A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = NoteAppUITests/Info.plist; sourceTree = SOURCE_ROOT; };
 		D4F3A64621BA277400BD187A /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		D4F3A64721BA277400BD187A /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		D4F3A64E21BBB34600BD187A /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		D4F3A65721BC004F00BD187A /* NoteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteManager.swift; sourceTree = "<group>"; };
+		D4F3A65921BF77F700BD187A /* NoteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListViewController.swift; sourceTree = "<group>"; };
+		D4F3A65B21BF785700BD187A /* PushToController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushToController.swift; sourceTree = "<group>"; };
+		D4F3A65E21BF78FE00BD187A /* UIStoryboard+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Additions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +113,7 @@
 				D4F3A64721BA277400BD187A /* Realm.framework */,
 				D4F3A64621BA277400BD187A /* RealmSwift.framework */,
 				D4F3A61721BA26E300BD187A /* NoteApp */,
+				D4F3A65221BBE1E800BD187A /* Resources */,
 				D4F3A62C21BA26E500BD187A /* NoteAppTests */,
 				D4F3A63721BA26E500BD187A /* NoteAppUITests */,
 				D4F3A61621BA26E300BD187A /* Products */,
@@ -124,13 +133,12 @@
 		D4F3A61721BA26E300BD187A /* NoteApp */ = {
 			isa = PBXGroup;
 			children = (
-				D4F3A61821BA26E300BD187A /* AppDelegate.swift */,
-				D4F3A61A21BA26E400BD187A /* ViewController.swift */,
-				D4F3A61C21BA26E400BD187A /* Main.storyboard */,
-				D4F3A61F21BA26E500BD187A /* Assets.xcassets */,
-				D4F3A62121BA26E500BD187A /* LaunchScreen.storyboard */,
-				D4F3A62421BA26E500BD187A /* Info.plist */,
-				D4F3A64E21BBB34600BD187A /* Note.swift */,
+				D4F3A66021BF7AB900BD187A /* Constants */,
+				D4F3A65D21BF78E500BD187A /* Extensions */,
+				D4F3A65621BC003700BD187A /* Manager */,
+				D4F3A65121BBE1A800BD187A /* Application */,
+				D4F3A65521BBE22500BD187A /* Model */,
+				D4F3A65021BBE18A00BD187A /* ViewController */,
 			);
 			path = NoteApp;
 			sourceTree = "<group>";
@@ -151,6 +159,82 @@
 				D4F3A63A21BA26E500BD187A /* Info.plist */,
 			);
 			path = NoteAppUITests;
+			sourceTree = "<group>";
+		};
+		D4F3A65021BBE18A00BD187A /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D4F3A61A21BA26E400BD187A /* NotebookListTableViewController.swift */,
+				D4F3A65921BF77F700BD187A /* NoteListViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		D4F3A65121BBE1A800BD187A /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				D4F3A62421BA26E500BD187A /* Info.plist */,
+				D4F3A61821BA26E300BD187A /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		D4F3A65221BBE1E800BD187A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D4F3A65421BBE21300BD187A /* Images */,
+				D4F3A65321BBE1F600BD187A /* StoryBoard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D4F3A65321BBE1F600BD187A /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				D4F3A61C21BA26E400BD187A /* Main.storyboard */,
+				D4F3A62121BA26E500BD187A /* LaunchScreen.storyboard */,
+			);
+			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+		D4F3A65421BBE21300BD187A /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				D4F3A61F21BA26E500BD187A /* Assets.xcassets */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		D4F3A65521BBE22500BD187A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D4F3A64E21BBB34600BD187A /* Note.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D4F3A65621BC003700BD187A /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				D4F3A65721BC004F00BD187A /* NoteManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		D4F3A65D21BF78E500BD187A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D4F3A65E21BF78FE00BD187A /* UIStoryboard+Additions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D4F3A66021BF7AB900BD187A /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				D4F3A65B21BF785700BD187A /* PushToController.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,8 +390,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4F3A61B21BA26E400BD187A /* ViewController.swift in Sources */,
+				D4F3A65C21BF785700BD187A /* PushToController.swift in Sources */,
+				D4F3A61B21BA26E400BD187A /* NotebookListTableViewController.swift in Sources */,
+				D4F3A65F21BF78FE00BD187A /* UIStoryboard+Additions.swift in Sources */,
+				D4F3A65821BC004F00BD187A /* NoteManager.swift in Sources */,
 				D4F3A61921BA26E300BD187A /* AppDelegate.swift in Sources */,
+				D4F3A65A21BF77F700BD187A /* NoteListViewController.swift in Sources */,
 				D4F3A64F21BBB34600BD187A /* Note.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -488,7 +576,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = NoteApp/Info.plist;
+				INFOPLIST_FILE = NoteApp/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -509,7 +597,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = NoteApp/Info.plist;
+				INFOPLIST_FILE = NoteApp/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
